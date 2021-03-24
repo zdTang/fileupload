@@ -17,10 +17,12 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+import file_app.views
 
 urlpatterns = [
   url('admin/', admin.site.urls),
   url('file/', include('file_app.urls')),
+  url("", file_app.views.index, name="index"),
 ]
 
 if settings.DEBUG:
